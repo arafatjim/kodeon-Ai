@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="pt-40">Flood Risk Manager
+    <div className="pt-40">Kodeon AI
 
       <Button variant="outline">Get Started</Button>
       <Button variant="outline">

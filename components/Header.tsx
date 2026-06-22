@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Button } from './ui/button'
+import { IconButton } from './animate-ui/components/buttons/icon'
 
 const Header = () => {
   return (
@@ -17,7 +18,11 @@ const Header = () => {
                 width={100} 
                 height={100} 
                 className="inline-block mr-2 rounded-md" /> */}
-                <h1>KodeonAI</h1>
+                <h1 className='text-3xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-fuchsia-600'> 
+
+                    KodeonAI
+                   
+                  </h1>
             </Link>
             <div className='text-md font-semibold  text-white items-center flex gap-1 md:gap-4'>
 
@@ -38,15 +43,16 @@ const Header = () => {
 
                 <Show when="signed-out" fallback={null}>
               <SignInButton mode='modal'>
-                <Button variant="ghost" className=" bg-blue-600 rounded-full font-medium text-sm sm:text-base h-10 sm:h-8 px-2 sm:px-5 cursor-pointer hover:bg-white/80 hover:text-black">
+                <Button variant="ghost" className=" bg-blue-600 rounded-2xl font-medium text-sm sm:text-base h-10 sm:h-8 px-2 sm:px-5 cursor-pointer hover:bg-white/80 hover:text-black">
                   Sign In
                 </Button>
               </SignInButton>
               <SignUpButton mode='modal'>
-                <Button variant="ghost" className=" bg-blue-600 rounded-full font-medium text-sm sm:text-base h-10 sm:h-8 px-2 sm:px-5 cursor-pointer hover:bg-white/80 hover:text-black">
+                <Button variant="ghost" className=" bg-blue-600 rounded-2xl font-medium text-sm sm:text-base h-10 sm:h-8 px-2 sm:px-5 cursor-pointer hover:bg-white/80 hover:text-black">
                   Sign Up
                 </Button>
               </SignUpButton>
+              
             </Show>
             
 

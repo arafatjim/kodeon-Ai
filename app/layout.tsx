@@ -41,7 +41,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${lora.variable} ${dmSans.variable} bg-white text-slate-900 antialiased font-sans`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full g-black  flex flex-col">
         
           
         

@@ -20,7 +20,7 @@ const Header = () => {
                 className="inline-block mr-2 rounded-md" /> */}
                 <h1 className='text-3xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-fuchsia-600'> 
 
-                    KodeonAI
+                    Codexa
                    
                   </h1>
             </Link>

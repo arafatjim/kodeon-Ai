@@ -66,6 +66,7 @@ export const STEPS = [
 ];
 
 export const PLACEHOLDERS = [
+  "Reply to Codexa....",
   "A task manager with priority labels and drag-and-drop…",
   "A crypto portfolio tracker with live charts…",
   "A markdown notes app with live preview…",

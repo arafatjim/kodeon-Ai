@@ -353,7 +353,7 @@ export default function Home() {
 {/* Pricing section */}
 
       <section className="w-full max-w-7xl my-4  flexborder-white px-8  ">
-        <GravityStarsBackground className="absolute h-auto " />
+        <GravityStarsBackground className="absolute  " />
           <div className="mx-auto mb-14 py-14 text-center">
             <SelectionLabel>Simple Pricing</SelectionLabel>
             <SectionHeading gray={"Start free"} blue={"scale when ready."} />

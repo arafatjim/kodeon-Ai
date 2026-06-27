@@ -1,15 +1,13 @@
 import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
 import { Zap } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Button } from './ui/button'
-import { IconButton } from './animate-ui/components/buttons/icon'
 
 const Header = () => {
   return (
     <header className="bg-black/90 text-white p-4 fixed
-    top-0 left-0 h-16 w-full z-50 border-white/6 backdrop-blur-2xl border-b">
+    top-0 left-0 h-16 w-full mx-auto z-50 border-white/6 backdrop-blur-2xl border-b">
         <nav className="container mx-auto flex justify-between items-center max-w-7xl px-2 sm:px-4 lg:px-8">
             <Link href="/" className="text-2xl font-bold">
                 {/* <Image 

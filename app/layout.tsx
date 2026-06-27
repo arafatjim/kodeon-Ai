@@ -39,7 +39,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${lora.variable} ${dmSans.variable} bg-white text-slate-900 antialiased font-sans`}
+      className={`${lora.variable} ${dmSans.variable} bg-black text-slate-900 antialiased font-sans`}
     >
       <body className="min-h-full g-black  flex flex-col">
         

@@ -11,8 +11,8 @@ import { FEATURES, PLACEHOLDERS, STEPS, SUGGESTIONS } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 
 import { GravityStarsBackground } from "@/components/animate-ui/components/backgrounds/gravity-stars";
-import { ChevronRight, ZapIcon, ZoomIn } from "lucide-react";
-import { DrawerRoot } from "@base-ui/react";
+import { ChevronRight, } from "lucide-react";
+
 
 export default function Home() {
 
@@ -61,6 +61,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen bg-black text-white flex-col items-center justify-between mb-10 px-4 pt-6">
       <GravityStarsBackground className="absolute inset-0 w-full h-screen" />
+
       <section className="relative mt-16 h-screen flex flex-col items-center overflow-hidden px-4  text-center sm:text-lg lg:text-xl">
       
       
@@ -150,10 +151,10 @@ export default function Home() {
       </p>
       </section>
 
-
-      <section className="relative mx-auto mt-2 w-full max-w-7xl  px-0 pb-20 ">
+      {/* demo  */}
+      <section className="relative mx-auto mt-2 w-full max-w-5xl px-0 pb-0 rounded-3xl shadow-xl shadow-[#E5EEE4] mb-14">
         <GravityStarsBackground className="absolute inset-0 w-full h-screen" />
-        <div className="mx-auto max-w-8xl overflow-hidden rounded-3xl border-6 border-black/10 bg-white/20 p-2 shadow-[0_24px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+        <div className="mx-auto max-w-8xl overflow-hidden rounded-3xl border-6 border-gray-500 bg-white/20 p-2 shadow-[0_24px_80px_rgba(15,23,42,0.12)] backdrop-blur">
           <div className="rounded-3xl border border-black/5 bg-[#0f172a] p-3 sm:p-4">
             <div className="mb-3 flex items-center gap-2">
               <div className="h-3 w-3 rounded-full bg-[#ff5f57]" />
@@ -281,25 +282,25 @@ export default function Home() {
 
 
         {/* Features section */}
-        <section className="w-full max-w-7xl my-4">
+        <section className="w-full max-w-5xl my-4 ">
           
-          <div className="mx-auto mb-14 text-center">
+          <div className="mx-auto mb-14 text-center ">
             
             <SelectionLabel>Everything you need</SelectionLabel>
             <SectionHeading gray={"From prompt"} blue={"to production."} />
           </div>
 
-          <div className="mx-auto p-2 grid grid-cols-1 gap-2 overflow-hidden border-6 border-white/70 rounded-2xl b bg-white/6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto p-2 mb-8 grid grid-cols-1 gap-2 overflow-hidden border-6 border-gray-500 rounded-2xl b bg-white/6 sm:grid-cols-2 lg:grid-cols-3 shadow-xl shadow-[#E5EEE4]">
           
             {FEATURES.map(({ icon: Icon, label, desc }) => (
-              <div key={label} className="group  bg-[#132440] text-white p-6 hover:bg-black rounded-lg">
+              <div key={label} className="group  bg-[#132440] text-white p-6 hover:bg-black rounded-lg shadow-md shadow-amber-50">
                 
                 <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg border-2 border-white text-blue-600">
                   <Icon className="h-4 w-4 " />
               </div>
 
                   <p className="mb-2  text-sm font-semibold ">{label}</p>
-                  <p className="text-sm text-white  leading-relaxed text-black/80 ">
+                  <p className="text-sm text-white  leading-relaxed ">
                   {desc}
                   </p>
       
@@ -309,22 +310,22 @@ export default function Home() {
           </div>
         </section>
 
-{/* HOW IT WORKS / Steps section */}
-      <section className="w-full max-w-7xl my-4">
+      {/* HOW IT WORKS / Steps section */}
+      <section className="w-full max-w-5xl my-4">
         
-          <div className="mx-auto mb-14 text-center">
+          <div className="mx-auto mb-14 text-center ">
             
             <SelectionLabel>How it works</SelectionLabel>
 
             <SectionHeading gray={"For steps"} blue={"to a working app."} />
           </div>
 
-          <div className="mx-auto p-2 border-6 border-gray-300 rounded-2xl max-w-3xl">
+          <div className="mx-auto border-6 border-gray-500 rounded-2xl max-w-5xl shadow-xl shadow-[#E5EEE4]">
             
             {STEPS.map((step, i)=>{
               return(
                 
-                <div key={step.number} className="flex items-center gap-6">
+                <div key={step.number} className="flex items-center gap-6 shadow-lg px-2 rounded-lg shadow-[#E5EEE4]">
                   
                   <div className="flex flex-col items-center">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/60 bg-white/10">
@@ -355,11 +356,11 @@ export default function Home() {
         </section>
 
 
-{/* Pricing section */}
+      {/*Simple Pricing section */}
 
-      <section className="w-full max-w-7xl my-4  flexborder-white px-8  ">
+      <section className="w-full max-w-5xl my-4  flexborder-white p-0">
         <GravityStarsBackground className="absolute  " />
-          <div className="mx-auto mb-14 py-14 text-center">
+          <div className="mx-auto mb-14 py-14 text-center ">
             <SelectionLabel>Simple Pricing</SelectionLabel>
             <SectionHeading gray={"Start free"} blue={"scale when ready."} />
 
@@ -368,7 +369,7 @@ export default function Home() {
           </div>
 
 
-          <div className="mx-auto max-w-3xl ">
+          <div className="mx-auto max-w-5xl p-2 border-6 border-gray-500 rounded-2xl shadow-xl shadow-[#E5EEE4]">
             {/* Pricing Table */}
               <PricingTable
                 checkoutProps={{
@@ -385,8 +386,8 @@ export default function Home() {
         </section>
 
 
-{/* Sales Scale Section */}
-        <section className="relative mx-auto px-8 py-14 mb-32 max-w-5xl w-full overflow-hidden rounded-2xl border border-white/8 text-center my-16">
+      {/* Sales Scale Section */}
+        <section className="relative border-6 border-gray-500 mx-auto px-8 py-14 mb-32 max-w-5xl w-full overflow-hidden rounded-2xl text-center my-16 shadow-xl shadow-[#E5EEE4]">
             <GravityStarsBackground className="w-full  absolute" />
 
               <SectionHeading gray="Start building," blue="for free."/>
@@ -411,7 +412,7 @@ export default function Home() {
 
 
 {/* Footer Section */}
-        <footer className="relative w-full z-10 border-t-2 border-white/60 py-12 px-6 flex flex-wrap items-center justify-center text-stone-400">
+        <footer className="relative w-full z-10 border-t-2 border-white/60 py-2 px-6 flex flex-wrap items-center justify-center text-stone-400">
           Made by Y@JIM
         </footer>
     </main>

@@ -2,7 +2,7 @@ import React from 'react'
 
 export const GrayTitle = ({ children }: { children: React.ReactNode }) => {
   return (
-    <span className="text-gray-600 font-bold text-3xl tracking-wide">
+    <span className="text-gray-200 font-bold text-3xl tracking-wide">
       {children}
     </span>
   );

@@ -4,14 +4,15 @@ import { BlueTitle, GrayTitle, SectionHeading, SelectionLabel } from "@/componen
 
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { SignInButton, useAuth } from "@clerk/nextjs";
+import { PricingTable, SignInButton, useAuth } from "@clerk/nextjs";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { FEATURES, PLACEHOLDERS, STEPS, SUGGESTIONS } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 
 import { GravityStarsBackground } from "@/components/animate-ui/components/backgrounds/gravity-stars";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ZapIcon, ZoomIn } from "lucide-react";
+import { DrawerRoot } from "@base-ui/react";
 
 export default function Home() {
 
@@ -58,9 +59,9 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen bg-black text-white flex-col items-center justify-between mb-24 px-4 pt-6">
+    <main className="flex min-h-screen bg-black text-white flex-col items-center justify-between mb-10 px-4 pt-6">
       <GravityStarsBackground className="absolute inset-0 w-full h-screen" />
-      <section className="relative h-screen flex flex-col items-center overflow-hidden px-4 pb-10 pt-30 text-center sm:text-lg lg:text-xl">
+      <section className="relative mt-16 h-screen flex flex-col items-center overflow-hidden px-4  text-center sm:text-lg lg:text-xl">
       
       
        
@@ -81,14 +82,14 @@ export default function Home() {
 
 
       {/* Prompt Box */}
-      <div className="relative mx-auto mt-12 w-full text-white max-w-2xl">
+      <div className="relative mx-auto my-12 w-full text-white max-w-2xl">
         <div
           className={cn(
             "bg-blue-300/20 rounded-2xl text-white border duration-200 ",
             isFocused ? "border-white/20 ring-1 ring-black" : "border-black/10 ring-0"
           )}
         >
-          <textarea className="w-full rounded-2xl bg-transparent- p-4 text-lg text-white placeholder:text-white focus:outline-none focus:ring-0 sm:text-xl " 
+          <textarea className="w-full rounded-2xl bg-transparent- p-4 text-lg text-white placeholder:text-white/40 focus:outline-none focus:ring-0 sm:text-xl " 
           ref = {textAreaRef}
            value={prompt}
            onFocus={() => setFocused(true)}
@@ -135,7 +136,7 @@ export default function Home() {
              onAuxClick={()=> handleSuggestion(s)}
             variant="outline"
             size="sm"
-            className="bg-blue-300/20  text-white hover:bg-blue-400/20 hover:text-blue-500/90"
+            className="bg-blue-300/20 text-xs text-white hover:bg-blue-400/20 hover:text-blue-500/80"
             onClick={() => setPrompt(suggestion)}
           >
             {suggestion}
@@ -144,16 +145,16 @@ export default function Home() {
       </div>
       </div>
 
-      <p className="text-sm text-muted-foreground mt-4 z-10 ">
+      <p className="text-sm text-muted-foreground p-2 z-10 ">
         Gemini 3.5 Flash is a large language model trained by Google DeepMind. It is not affiliated with OpenAI or ChatGPT.
       </p>
       </section>
 
 
-      <section className="relative mx-auto mt-12 w-full max-w-7xl px-0 pb-24 ">
+      <section className="relative mx-auto mt-2 w-full max-w-7xl  px-0 pb-20 ">
         <GravityStarsBackground className="absolute inset-0 w-full h-screen" />
-        <div className="mx-auto max-w-8xl overflow-hidden rounded-[2rem] border border-black/10 bg-white/70 p-2 shadow-[0_24px_80px_rgba(15,23,42,0.12)] backdrop-blur">
-          <div className="rounded-[1.5rem] border border-black/5 bg-[#0f172a] p-3 sm:p-4">
+        <div className="mx-auto max-w-8xl overflow-hidden rounded-3xl border-6 border-black/10 bg-white/20 p-2 shadow-[0_24px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+          <div className="rounded-3xl border border-black/5 bg-[#0f172a] p-3 sm:p-4">
             <div className="mb-3 flex items-center gap-2">
               <div className="h-3 w-3 rounded-full bg-[#ff5f57]" />
               <div className="h-3 w-3 rounded-full bg-[#febc2e]" />
@@ -281,14 +282,18 @@ export default function Home() {
 
         {/* Features section */}
         <section className="w-full max-w-7xl my-4">
+          
           <div className="mx-auto mb-14 text-center">
+            
             <SelectionLabel>Everything you need</SelectionLabel>
             <SectionHeading gray={"From prompt"} blue={"to production."} />
           </div>
 
-          <div className="mx-auto p-2 grid grid-cols-1 gap-4 gap-px overflow-hidden border-6 border-white/70 rounded-2xl b bg-white/6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto p-2 grid grid-cols-1 gap-2 overflow-hidden border-6 border-white/70 rounded-2xl b bg-white/6 sm:grid-cols-2 lg:grid-cols-3">
+          
             {FEATURES.map(({ icon: Icon, label, desc }) => (
               <div key={label} className="group  bg-[#132440] text-white p-6 hover:bg-black rounded-lg">
+                
                 <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg border-2 border-white text-blue-600">
                   <Icon className="h-4 w-4 " />
               </div>
@@ -314,7 +319,7 @@ export default function Home() {
             <SectionHeading gray={"For steps"} blue={"to a working app."} />
           </div>
 
-          <div className="mx-auto max-w-3xl">
+          <div className="mx-auto p-2 border-6 border-gray-300 rounded-2xl max-w-3xl">
             
             {STEPS.map((step, i)=>{
               return(
@@ -358,14 +363,24 @@ export default function Home() {
             <SelectionLabel>Simple Pricing</SelectionLabel>
             <SectionHeading gray={"Start free"} blue={"scale when ready."} />
 
-            <p className="mx-auto mt-4 max-w-sm text-sm text-white/40">No credit card required. Upgrade or downgrade anytime.</p>
+            <p className="mx-auto mt-4 max-w-sm text-sm text-white/70">No credit card required. Upgrade or downgrade anytime.</p>
 
           </div>
 
 
-          <div className="mx-auto max-w-3xl">
+          <div className="mx-auto max-w-3xl ">
             {/* Pricing Table */}
-
+              <PricingTable
+                checkoutProps={{
+                  appearance:{
+                    elements:{
+                      drawerRoot:{
+                        zIndex: 2000,
+                      },
+                    },
+                  },
+                }}
+              />
           </div>
         </section>
 
